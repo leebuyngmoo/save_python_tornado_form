@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+</head>
+<body style="background-color:#F5F5DC; padding:2em;">
+ 
+<form method="post">
+ <div class="ui form">
+ <div class="inline fields">
+ <label> What is your Nickname?</label>
+ 	<div class="field">
+ 		<input type="text" name="nickname" />
+ 	</div>
+ </div>
+
+
+
+  <div class="inline fields">
+    <label>How often do you use the computer?</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="frequency" value="Once a week" checked="checked" type="radio">
+        <label>Once a week</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="frequency" value="2-3 times a week" type="radio">
+        <label>2-3 times a week</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="frequency" value="Once a day" type="radio">
+        <label>Once a day</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="frequency" value="Twice a day" type="radio">
+        <label>Twice a day</label>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="submit"> SUBMIT</button>
+</form>
+<br>
+{{userinfo}}
+</body>
+</html>
+
+ 

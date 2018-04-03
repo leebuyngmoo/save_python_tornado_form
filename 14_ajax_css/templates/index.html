@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ 
+  <script>
+  $(document).ready(function()
+  {
+    setInterval(function() {       
+      var currentid = $("#currentid").val();
+      var data = 
+	    { 
+	      inputid:currentid
+	    };
+	  var dataToSend = JSON.stringify(data)
+	  $.ajax(
+	    {
+	      url:'/',
+	      type:'POST',
+	      data:dataToSend,
+	      success:function(jsonResponse)
+	      {
+	        var objresponse = JSON.parse(jsonResponse);
+	        var html = "";
+	        html += "<div><hr style='width:" + objresponse['now'] +"%;'>"; 
+	        html += "<h3><p style='color:" + objresponse['color'] + ";'>"; 
+	        html += objresponse['now'] + "%</p></h3>";
+	        html += "</div>";
+	    	$("#responsefield").html(html)
+	      },
+	      error:function()
+	      {
+	        $("#responsefield").text("Error to load api");
+	      }
+	  });
+    event.preventDefault();
+    }, 1000);
+  });
+  </script>
+</head>
+<body style="margin-top:20%;">
+<span id="responsefield" style="text-align:center"></span>
+</body>
+</html>
